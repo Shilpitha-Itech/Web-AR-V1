@@ -87,7 +87,7 @@ function App() {
             id="captured-image"
           />
           <button className="button-download" onClick={download}>
-            ⬇️ Download
+            ⬇️ Download Image
           </button>
           <button className="button-server" onClick={download}>
             🖧 Send to Server
