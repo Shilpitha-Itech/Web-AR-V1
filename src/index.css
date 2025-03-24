@@ -1,0 +1,181 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  /* min-width: 320px;
+  min-height: 100vh; */
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  /* max-width: 1280px; */
+  max-width: 100%;
+  height: 100vh;
+  width: 100%;
+  margin: 0 auto;
+  /* padding: 2rem; */
+  text-align: center;
+}
+
+.button-capture {
+  width: 100px;
+  height: 100px;
+  position: absolute; /* Allows precise positioning */
+  bottom: 20px; /* Places it at the bottom */
+  left: 50%; /* Moves it to the middle */
+  transform: translateX(-50%); /* Centers it properly */
+  z-index: 10; /* Ensures it's above the video */
+  padding: 12px;
+  font-size: 24px;
+  background-color: white;
+  color: green;
+  border: 15px solid green;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+
+.button-capture:hover {
+  box-shadow: 0px 4px 10px rgba(0, 128, 0, 0.5); 
+  transform: translateX(-50%) scale(1.1); 
+}
+
+.video-container {
+  width: 100%;
+  height: 100%;
+  position: absolute; /* Makes it cover the entire container */
+  top: 0;
+  left: 0;
+  z-index: 0; /* Sends it behind the button */
+}
+
+@media (max-width: 480px) {
+  .button-capture {
+    width: 18vw;
+    height: 18vw;
+    max-width: 80px;
+    max-height: 80px;
+    font-size: 1rem;
+    border: 0.8vw solid green;
+    bottom: 100px;
+  }
+
+  .video-container {
+    height: 100%;
+  }
+}
+
+.container {
+  position: relative; /* Ensures positioning works inside */
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-container {
+  width: 100%;
+  height: 100%;
+  position: absolute; /* Makes it cover the entire container */
+  top: 0;
+  left: 0;
+  z-index: 0; /* Sends it behind the button */
+}
+
+/* Download Button (Top Right) */
+.button-download {
+  position: absolute;
+  top: 2vh;
+  right: 2vw;
+  z-index: 20;
+  font-size: 1.5vw; /* Responsive font size */
+  color: green;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+.button-server {
+  position: absolute;
+  top: 12vh;
+  right: 2vw;
+  z-index: 20;
+  font-size: 1.5vw; /* Responsive font size */
+  color: green;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Close Button (Top Left) */
+.button-close {
+  position: absolute;
+  top: 2vh;
+  left: 2vw;
+  z-index: 20;
+  font-size: 1.5vw; /* Responsive font size */
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Hover Effect - Slight Scale Increase */
+.button-download:hover,
+.button-server:hover,
+.button-close:hover {
+  transform: scale(1.2);
+}
+
+/* Click Effect */
+.button-download:active,
+.button-server:active,
+.button-close:active {
+  transform: scale(0.9);
+}
+
+/* 📱 Mobile-Friendly Adjustments */
+@media (max-width: 480px) {
+  .button-download,
+  .button-close {
+    font-size: 6vw; /* Increase icon size on smaller screens */
+    top: 3vh;
+  }
+
+  .button-server{
+    font-size: 6vw; /* Increase icon size on smaller screens */
+    top: 10vh;
+  }
+}
+
